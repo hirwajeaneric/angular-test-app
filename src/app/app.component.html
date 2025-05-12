@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h1 class="font-bold text-xl">Hello, {{ yourName }}!</h1>
+  @if (title != null) {
+  <p>Welcome to {{ title }}!</p>
+  } @else {
+  <p>You are welcome.</p>
+  }
+  <p>{{ greetings }}</p>
+</div>
+
+<router-outlet />
