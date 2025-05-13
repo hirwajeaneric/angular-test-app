@@ -1,11 +1,21 @@
 <div class="text-center">
-  <h1 class="font-bold text-xl">Hello, {{ yourName }}!</h1>
+  <h1 class="font-bold text-3xl">Hello, {{ yourName }}!</h1>
   @if (title != null) {
   <p>Welcome to {{ title }}!</p>
   } @else {
   <p>You are welcome.</p>
   }
   <p>{{ greetings }}</p>
+  <div class="p-4">
+    <ul class="list-disc bg-amber-50 list-inside">
+      @for (activity of activities; track $index) {
+        <li class="w-fit">{{activity}}</li>
+      }
+    </ul>
+    <button type="button" class="text-start w-fit px-3 py-2 bg-orange-300 rounded-md text-white text-black" (click)="greetMe()">Greet me</button>
+    <h2 class="text-2xl">What is your occupation?</h2>
+    <app-user occupation="Angular Developer"></app-user>
+  </div>
 </div>
 
 <router-outlet />
